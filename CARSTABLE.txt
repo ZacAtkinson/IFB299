@@ -1,0 +1,29 @@
+mysql> CREATE TABLE CARS (
+    -> Car_ID INT,
+    -> Car_MakeName VARCHAR(255),
+    -> Car_Model VARCHAR(255),
+    -> Car_Series VARCHAR(255),
+    -> Car_SeriesYear INT,
+    -> Car_PriceNew INT,
+    -> Car_EngineSize VARCHAR(5),
+    -> Car_FuelSystem VARCHAR(255),
+    -> Car_TankCapacity VARCHAR(4),
+    -> Car_Power VARCHAR(6),
+    -> Car_SeatingCapacity INT,
+    -> Car_StandardTransmission VARCHAR(255),
+    -> Car_BodyType VARCHAR(255),
+    -> Car_Drive VARCHAR(255),
+    -> Car_Wheelbase VARCHAR(255),
+    -> PRIMARY KEY(Car_ID));
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> LOAD DATA LOCAL INFILE 'C:\\Users\\Zac\\Desktop\\299Sprint1\\CarsSheet.csv'
+    -> INTO TABLE CRCDATA.CARS
+    -> FIELDS TERMINATED BY ','
+    -> ENCLOSED BY ""
+    -> LINES TERMINATED BY '\r\n'
+    -> IGNORE 1 ROWS;
+Query OK, 298 rows affected, 27 warnings (0.23 sec)
+Records: 298  Deleted: 0  Skipped: 0  Warnings: 27
+
+mysql> SELECT * FROM CARS;
